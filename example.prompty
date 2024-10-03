@@ -1,0 +1,20 @@
+---
+name: Azure OpenAI Prompty
+description: A basic prompt using Azure OpenAI
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_deployment: gpt-35-turbo
+    api_key: "${env:AZURE_OPENAI_API_KEY}"
+    api_version: "${env:AZURE_OPENAI_API_VERSION}"
+    azure_endpoint: "${env:AZURE_OPENAI_ENDPOINT}"
+  parameters:
+    max_tokens: 128
+    temperature: 0.2
+inputs:
+  text:
+    type: string
+---
+system:
+You're an helpfull assistant, reply to user based on the input text: "{{text}}"
